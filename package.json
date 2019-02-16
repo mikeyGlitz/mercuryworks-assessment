@@ -38,12 +38,6 @@
       "git add"
     ]
   },
-  "jest": {
-    "transform": {
-      "\\.{graph,gql}$": "jest-transform-graphql",
-      ".*": "babel-jest"
-    }
-  },
   "browserslist": [
     ">0.2%",
     "not dead",
