@@ -9,8 +9,7 @@ script:
   - yarn docs
 deploy:
   provider: releases
-  user: $GH_USER
-  password: $GH_PASSWORD
+  api_key: $GH_API_TOKEN
   file_glob: true
   file:
     - build/*
