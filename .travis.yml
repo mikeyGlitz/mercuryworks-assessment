@@ -9,7 +9,8 @@ script:
   - yarn docs
 deploy:
   provider: releases
-  api_key: $GIHUB_OAUTH_TOKEN
+  user: $GH_USER
+  password: $GH_PASSWORD
   file_glob: true
   file:
     - build/*
