@@ -12,8 +12,13 @@
  * `./node_modules/marcopeg-react-scripts/config/webpack.config.${env}.js`
  *
  */
+const rewireEslint = require('react-scripts-rewired/lib/rewire-eslint');
+const rewirePostcss = require('react-app-rewire-postcss');
 
 module.exports = (webpackConfig, env, { paths }) => {
-    // here you can extend your webpackConfig at will
-    return webpackConfig
-}
+  webpackConfig = rewireEslint(webpackConfig);
+  webpackConfig = rewirePostcss(webpackConfig);
+  // here you can extend your webpackConfig at will
+
+  return webpackConfig;
+};

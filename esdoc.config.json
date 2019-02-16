@@ -1,0 +1,53 @@
+{
+  "source": "./src",
+  "destination": "./docs",
+  "includes": [
+    "\\.jsx?"
+  ],
+  "excludes": [
+    "\\.(spec|Spec|test|Test)\\.jsx?$"
+  ],
+  "plugins": [
+    {
+      "name": "esdoc-standard-plugin",
+      "option": {
+        "test": {
+          "source": "./src",
+          "interfaces": [
+            "describe",
+            "it"
+          ],
+          "includes": [
+            "\\.(spec|Spec|test|Test)\\.jsx?$"
+          ]
+        },
+        "coverage": {
+          "enable": true
+        },
+        "undocumentIdentifier": {
+          "enable": true
+        },
+        "unexportIdentifier": {
+          "enable": true
+        }
+      }
+    },
+    {
+      "name": "esdoc-ecmascript-proposal-plugin",
+      "option": {
+        "classProperties": true,
+        "objectRestSpread": true,
+        "asyncGenerators": true
+      }
+    },
+    {
+      "name": "esdoc-jsx-plugin",
+      "option": {
+        "enable": "true"
+      }
+    },
+    {
+      "name": "esdoc-react-plugin"
+    }
+  ]
+}

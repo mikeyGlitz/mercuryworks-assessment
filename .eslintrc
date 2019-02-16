@@ -1,0 +1,32 @@
+{
+  "parser": "babel-eslint",
+  "plugins": ["jsdoc"],
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "extends": ["airbnb"],
+  "rules": {
+    "linebreak-style": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "jsdoc/check-examples": "off",
+    "jsdoc/check-param-names": "error",
+    "jsdoc/check-tag-names": "error",
+    "jsdoc/check-types": "error",
+    "jsdoc/newline-after-description": "warn",
+    "jsdoc/no-undefined-types": "error",
+    "jsdoc/require-description": "error",
+    "jsdoc/require-description-complete-sentence": "warn",
+    "jsdoc/require-example": "warn",
+    "jsdoc/require-hyphen-before-param-description": "off",
+    "jsdoc/require-param": "error",
+    "jsdoc/require-param-description": "error",
+    "jsdoc/require-param-name": "error",
+    "jsdoc/require-param-type": "error",
+    "jsdoc/require-returns": "error",
+    "jsdoc/require-returns-check": "error",
+    "jsdoc/require-returns-description": "error",
+    "jsdoc/require-returns-type": "error",
+    "jsdoc/valid-types": "error"
+  }
+}
