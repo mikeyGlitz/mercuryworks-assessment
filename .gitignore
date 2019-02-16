@@ -20,6 +20,7 @@
 
 .idea
 *.iml
+docs
 
 npm-debug.log*
 yarn-debug.log*
