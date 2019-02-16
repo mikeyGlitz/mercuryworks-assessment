@@ -39,16 +39,24 @@ export default class App extends Component {
     return (
       <ApolloProvider client={client}>
         <React.Fragment>
-          <div className="header">
-            <SearchBox setSearchTerm={this.setSearchTerm} />
-            <SortBox setSort={this.setSortOrder} />
+          <div className="appHeader">
+            <div className="search-container">
+              <SearchBox setSearchTerm={this.setSearchTerm} />
+            </div>
+            <div />
+            <div className="sort-order-container">
+              <SortBox setSort={this.setSortOrder} />
+            </div>
           </div>
-          <PeopleList
-            searchTerm={searchTerm}
-            page={page}
-            sortOrder={sortOrder}
-            setPageNumber={this.setPageNumber}
-          />
+          <hr />
+          <div className="peopleList">
+            <PeopleList
+              searchTerm={searchTerm}
+              page={page}
+              sortOrder={sortOrder}
+              setPageNumber={this.setPageNumber}
+            />
+          </div>
         </React.Fragment>
       </ApolloProvider>
     );

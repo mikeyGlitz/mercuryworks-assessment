@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './PersonCard.css';
 import SpeciesDisplay from './SpeciesDisplay';
 
 /**
@@ -31,7 +32,7 @@ const PersonCard = ({
   }
 
   return (
-    <div>
+    <div className="personCard">
       <div className="iconBlock">
         <SpeciesDisplay speciesLink={speciesIndex} />
       </div>
@@ -40,11 +41,17 @@ const PersonCard = ({
           <h2>{name}</h2>
         </div>
         <div>
-          <span>Height</span>&nbsp;
-          <span>{height}</span>&nbsp;
-          <span>Mass</span>&nbsp;
-          <span>{mass}</span>&nbsp;
-          <span>Gender</span>&nbsp;
+          <span>Height:</span>&nbsp;
+          <span>{height}</span>
+          &nbsp;
+          <i className="fa fa-xs fa-square" />
+          &nbsp;
+          <span>Mass:</span>&nbsp;
+          <span>{mass}</span>
+          &nbsp;
+          <i className="fa fa-xs fa-square" />
+          &nbsp;
+          <span>Gender:</span>&nbsp;
           <span>{gender}</span>&nbsp;
         </div>
       </div>

@@ -17,7 +17,7 @@ const rewirePostcss = require('react-app-rewire-postcss');
 
 module.exports = (webpackConfig, env, { paths }) => {
   webpackConfig = rewireEslint(webpackConfig);
-  webpackConfig = rewirePostcss(webpackConfig);
+  webpackConfig = rewirePostcss(webpackConfig, true);
   // here you can extend your webpackConfig at will
 
   return webpackConfig;

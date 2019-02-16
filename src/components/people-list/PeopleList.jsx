@@ -72,7 +72,7 @@ const PeopleList = ({
           </div>
         );
       }
-      if (data) {
+      if (data && data.people) {
         const {
           people: { results = [] },
         } = data;
@@ -86,21 +86,23 @@ const PeopleList = ({
         }
         return (
           <div>
+            <div className="progressButtons">
+              {page > 1 && (
+                <button id="previousButton" onClick={() => setPageNumber(page - 1)} type="button">
+                  <i className="fa fa-chevron-left" />
+                </button>
+              )}
+              {data.people.next && (
+                <button id="nextButton" onClick={() => setPageNumber(page + 1)} type="button">
+                  <i className="fa fa-chevron-right" />
+                </button>
+              )}
+            </div>
             {results
               .sort(sortOrder === FORWARD ? forwardSort : reverseSort)
               .map(person => (
                 <PersonCard key={person.name} person={person} />
               ))}
-            {page > 1 && (
-              <button onClick={() => setPageNumber(page - 1)} type="button">
-                <i className="fa fa-chevron-left" />
-              </button>
-            )}
-            {data.people.next && (
-              <button onClick={() => setPageNumber(page + 1)} type="button">
-                <i className="fa fa-chevron-right" />
-              </button>
-            )}
           </div>
         );
       }

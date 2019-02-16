@@ -44,7 +44,7 @@ const SpeciesDisplay = ({ speciesLink }) => (
             break;
         }
 
-        return <i className={`fa ${className}`} />;
+        return <i className={`fa fa-4x ${className}`} title={name} />;
       }
 
       return <span />;

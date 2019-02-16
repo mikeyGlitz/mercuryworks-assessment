@@ -1,0 +1,18 @@
+.iconBlock {
+    lost-column: 1/4;
+}
+
+.iconBlock i {
+    margin-top: .5em;
+}
+
+.personBlock {
+    lost-column: 3/4;
+}
+
+@media(max-width: 630px) {
+    .personCard {
+        margin: 0 2em;
+    }
+}
+
