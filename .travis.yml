@@ -7,13 +7,16 @@ script:
   - yarn test
   - yarn build
   - yarn docs
+before_deploy:
+  - cd ..
+  - tar -zcf ${TRAVIS_BUILD_DIR}${REPO}-${BUILD_ENV}-${TRAVIS_TAG}-${TRAVIS_BUILD_NUMBER}-docs.tar.gz ${REPO}/docs
+  - tar -zcf ${TRAVIS_BUILD_DIR}${REPO}-${BUILD_ENV}-${TRAVIS_TAG}-${TRAVIS_BUILD_NUMBER}.tar.gz ${REPO}/build
 deploy:
   provider: releases
-  api_key: $GH_API_TOKEN
-  file_glob: true
+  github-token: $GH_API_TOKEN
   file:
-    - build/*
-    - docs/*
+    - ${TRAVIS_BUILD_DIR}${REPO}-${BUILD_ENV}-${TRAVIS_TAG}-${TRAVIS_BUILD_NUMBER}.tar.gz
+    - ${TRAVIS_BUILD_DIR}${REPO}-${BUILD_ENV}-${TRAVIS_TAG}-${TRAVIS_BUILD_NUMBER}.docs.tar.gz
   skip_cleanup: true
   on:
     tags: true
