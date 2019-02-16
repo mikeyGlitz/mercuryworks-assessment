@@ -79,7 +79,8 @@ const PeopleList = ({
         if (results.length === 0) {
           return (
             <div>
-              <h1>We couldn&#39;t find the droids you were looking for</h1>
+              <i style={{ float: 'left', margin: '.5em' }} className="fa fa-5x fa-exclamation-triangle" />
+              <h2>We couldn&#39;t find the droids you were looking for</h2>
               <p>Please try again with a different search query</p>
             </div>
           );

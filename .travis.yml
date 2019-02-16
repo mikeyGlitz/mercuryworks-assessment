@@ -14,9 +14,10 @@ before_deploy:
 deploy:
   provider: releases
   github-token: $GH_API_TOKEN
+  file_glob: true
   file:
-    - ${TRAVIS_BUILD_DIR}${REPO}-${BUILD_ENV}-${TRAVIS_TAG}-${TRAVIS_BUILD_NUMBER}.tar.gz
-    - ${TRAVIS_BUILD_DIR}${REPO}-${BUILD_ENV}-${TRAVIS_TAG}-${TRAVIS_BUILD_NUMBER}.docs.tar.gz
+    - docs/*
+    - build/*
   skip_cleanup: true
   on:
     tags: true
